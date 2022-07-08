@@ -1,0 +1,21 @@
+{
+  "name": "codebarrets",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "adze": "^1.9.1",
+    "bss": "^1.6.4",
+    "readyjs": "^2.1.0",
+    "rubico": "^1.9.2",
+    "sinuous": "^0.28.1"
+  }
+}
