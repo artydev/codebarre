@@ -1,5 +1,5 @@
     **Coding
-    (https://bobbyhadz.com/blog/typescript-no-index-signature-with-parameter-of-type)[Typescript index signature]
+    [Typescript index signature](https://bobbyhadz.com/blog/typescript-no-index-signature-with-parameter-of-type)
     <a href="https://bobbyhadz.com/blog/javascript-update-all-values-in-object">Typescript Update Object</a>
     <hr />
     **APIS
