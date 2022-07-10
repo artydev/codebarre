@@ -24,7 +24,10 @@ function testStore () {
   return ;
 }
 
+// Permet de lancer la commande 'testStore' dans la console.
 Object.defineProperty(window, "testStore", { value: testStore });
 
 ready(startApp);
+
+testStore()
  

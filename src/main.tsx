@@ -1,36 +1,31 @@
-import { OpenFoodFacts } from "./tutorials/OpenFoodFacts";
-import { updateStore } from "./tutorials/store";
+
+import { updateStore } from "./store";
+import { AllComponents } from "../src/components/allcomponents"
+import  { ready } from "../src/utils"
 
 let root: HTMLElement | null;
 
-const ready = function (fn: any) {
-  const completed = () => {
-    document.removeEventListener("DOMContentLoaded", completed);
-    window.removeEventListener("load", completed);
-    fn();
-  };
-  if (document.readyState !== "loading") {
-    setTimeout(fn);
-  } else {
-    document.addEventListener("DOMContentLoaded", completed);
-    window.addEventListener("load", completed);
-  }
-};
-
 function attachComponent() {
-  if (root == null) return;
-  root.append(OpenFoodFacts(null));
+  AllComponents.map((comp) => root?.appendChild(comp(null)))
 }
+
+function testStore (patch:any) {
+  console.log("update code")
+  updateStore(patch)
+  return 1;
+}
+// Permet de lancer la commande 'testStore' dans la console.
+Object.defineProperty(window, "testStore", { value: testStore });
+
 
 function startApp(): void {
   root = document.getElementById("app");
-  if(root) {
+  if (root) {
     attachComponent();
-    updateStore({ appStarted: true });
+    updateStore({
+      appStarted: true
+    })
   }
-  else {
-    alert("Assurez-vous que l'élément d'id 'app' existe dans la page index.html")
-  }
-
 }
-ready(startApp); 
+
+ready(startApp())
