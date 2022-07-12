@@ -1,22 +1,23 @@
-import { subscribe } from "sinuous/observable"
-import { Store } from "../../store"
-import  { ModelProducts }from  "../dummyproduct/model"
-import  { ViewProduct } from "./view";
-import {fetchApi} from "../../services/getData"
+import { subscribe } from "sinuous/observable";
+import { Store } from "../../store";
+import { ModelProducts } from "../dummyproduct/model";
+import { ViewProduct } from "./view";
+import { fetchApi } from "../../services/getData";
 
+const url = "https://dummyjson.com/products";
+const targetId = "dummyproduct";
 
-function updateView(data:ModelProducts) {
-    let parent = document.getElementById("dummyproduct")
-    parent?.replaceChild(ViewProduct(data),parent.childNodes[0] )
+function updateView(data: ModelProducts) {
+  let target = document.getElementById(targetId);
+  if (target != null && target.parentNode != null) {
+    target.parentNode.replaceChild(ViewProduct(data), target);
+  }
 }
 
+subscribe(() => {
+  if (Store().appStarted) {
+    fetchApi({ url }).then(updateView);
+  }
+});
 
-
-subscribe(async () =>  {
-    if(Store().appStarted) {
-        const data = await fetchApi<ModelProducts>("https://dummyjson.com/products")
-        updateView(data);
-    }
-})
-
-export  { ViewProduct }
+export { ViewProduct };

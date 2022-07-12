@@ -1,7 +1,20 @@
-async function fetchApi<T>(url: string): Promise<T> {
-    const response = await fetch(url);
-    return  response.json(); 
-}
-  
+import { tryCatch } from "rubico";
 
-export { fetchApi }
+type urlApi = {
+  url: string;
+};
+
+const fetchApi = tryCatch(
+  async ({ url }: urlApi) => {
+    let req = await fetch(url);
+    let resp = await req.json();
+    return resp;
+  },
+  (err: object, data: object) => {
+    console.clear();
+    console.log(data);
+    console.log(err);
+  }
+);
+
+export { fetchApi };
