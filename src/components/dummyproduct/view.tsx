@@ -4,7 +4,7 @@ import { ModelProducts } from "./model";
 
 function _View(state: ModelProducts) {
   return (
-    <div>
+    <div class="dummyproduct">
       <h3>DummyProduct : </h3>
       {state.products[Math.floor(Math.random() * 30)].brand}
     </div>
