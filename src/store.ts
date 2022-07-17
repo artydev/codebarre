@@ -17,8 +17,6 @@ export function getStoreValue(key: keyof Store): StoreValue {
   return Store()[key];
 }
 
-
-
 export const Store = observable({
   appStarted: false,
   code: 0,

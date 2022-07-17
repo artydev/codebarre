@@ -5,13 +5,13 @@ import { MenuBar } from "./layout/toolbar";
 
 export const App = function () {
   return (
-    <div>
+    <div style="padding:0;margin:0">
       <MenuBar />
-      <div>
-        <div class="container" style="max-width:640px">
+      
+        <div class="container" style="width:100%">
           <div id="app"></div>
         </div>
-      </div>
+      
     </div>
   );
 };

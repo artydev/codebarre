@@ -7,3 +7,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.material-icons { 
+  color: black;
+  opacity: 0.4;
+}
+
+.greenblack04 {
+  color: black;
+  opacity: 0.4;
+}

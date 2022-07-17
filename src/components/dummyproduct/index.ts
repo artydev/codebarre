@@ -15,7 +15,7 @@ function updateView(data: ModelProducts) {
 }
 
 subscribe(() => {
-  if (Store().appStarted) {
+  if (Store().appStarted && Store().code > 0) {
     fetchApi({ url }).then(updateView);
   }
 });

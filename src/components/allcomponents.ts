@@ -1,7 +1,8 @@
 
 //import ViewOpenFood from "./openfood/vi";
-import { ViewProduct } from "../components/dummyproduct/index"
+import { ViewOpenFood } from "./openfood/index"
+
 
 export const AllComponents = [
-    ViewProduct
+ ViewOpenFood
 ]
